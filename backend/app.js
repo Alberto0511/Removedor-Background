@@ -21,7 +21,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", 
-      "https://removedor-background.vercel.app", 
+      "https://removedor-background-betos-projects-2c16badb.vercel.app", 
     ],
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -32,6 +32,7 @@ app.use((err, req, res, next) => {
   console.error("Error no controlado:", err);
   res.status(500).json({ detail: "Error interno del servidor." });
 });
+
 
 app.post("/remove-bg", upload.single("file"), async (req, res, next) => {
   try {
@@ -77,6 +78,7 @@ app.post("/remove-bg", upload.single("file"), async (req, res, next) => {
     next(error);
   }
 });
+
 
 app.use((req, res) => {
   res.status(404).json({ detail: "Ruta no encontrada." });
