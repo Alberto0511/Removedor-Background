@@ -22,7 +22,6 @@ const UploadForm = ({ onProcessComplete }) => {
       const formData = new FormData();
       formData.append("file", image);
 
-      // Usando la URL de la API desde el archivo .env
       const apiUrl = import.meta.env.VITE_API_URL;
       const response = await fetch(`${apiUrl}/remove-bg`, {
         method: "POST",
