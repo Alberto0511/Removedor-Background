@@ -21,7 +21,6 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", 
-      "https://removedor-background.vercel.app", 
     ],
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
